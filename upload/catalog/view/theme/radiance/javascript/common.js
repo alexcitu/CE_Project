@@ -51,10 +51,10 @@ $(document).ready(function() {
 	});
 
 	/* Search */
-	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
+	$('.search input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
-		var value = $('#searchBox #search input[name=\'search\']').val();
+		var value = $(this).prev().val();
 
 		if (value) {
 			url += '&search=' + encodeURIComponent(value);
@@ -63,9 +63,9 @@ $(document).ready(function() {
 		location = url;
 	});
 
-	$('#search input[name=\'search\']').on('keydown', function(e) {
+	$('.search input[name=\'search\']').on('keydown', function(e) {
 		if (e.keyCode == 13) {
-			$('#searchBox #search input[name=\'search\']').parent().find('button').trigger('click');
+			$(this).parent().find('button').trigger('click');
 		}
 	});
 
