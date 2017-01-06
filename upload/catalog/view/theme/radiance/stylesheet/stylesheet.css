@@ -312,7 +312,7 @@ header {
 }
 /* search */
 #search {
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	position: relative;
 }
 #search .input-lg {
