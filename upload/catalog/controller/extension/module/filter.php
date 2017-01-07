@@ -58,10 +58,15 @@ class ControllerExtensionModuleFilter extends Controller {
 							'filter_filter'      => $filter['filter_id']
 						);
 
-						$childen_data[] = array(
-							'filter_id' => $filter['filter_id'],
-							'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
-						);
+						$totalProducts = $this->model_catalog_product->getTotalProducts($filter_data);
+
+						if ($totalProducts > 0)
+						{
+							$childen_data[] = array(
+								'filter_id' => $filter['filter_id'],
+								'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $totalProducts . ')' : '')
+							);
+						}
 					}
 
 					$data['filter_groups'][] = array(
