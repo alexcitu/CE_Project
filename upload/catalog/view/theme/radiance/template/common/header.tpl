@@ -99,7 +99,7 @@
         <?php } ?>
         <?php } ?>
         </a>
-        <select id="languageSwit`ch" class="visible-xs">
+        <select id="languageSwitch" class="visible-xs">
         <?php foreach ($languages as $language) { ?>
         <?php if($language['code'] == $code_lang) { ?>
         <option value="<?php echo $language['code']; ?>" selected="selected"><?php echo $language['name']; ?></option>
