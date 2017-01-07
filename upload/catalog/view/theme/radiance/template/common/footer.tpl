@@ -40,6 +40,7 @@
     </div>
     <hr>
     <p class="copyrights"><?php echo $powered; ?></p>
+    <a href="http://radiance.demo.isenselabs.com/">Tema radiance. Toate drepturile sunt rezervate</a>
   </div>
 </footer>
 <script type="text/javascript">
