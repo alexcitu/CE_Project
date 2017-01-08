@@ -60,16 +60,15 @@
 <nav id="top">
   <div class="container">
   	<div class="row">
-        <div class="col-xs-2 col-sm-1 col-md-2 col-lg-1">
+        <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
         	<ul class="list-unstyled currency-language">
         	<li style="float: left;"><?php echo $currency; ?></li>
-            <li style="float: left;"><?php echo $language; ?></li>
             </ul>
         </div>
-        <div class="col-xs-3 col-sm-6 col-md-5 col-lg-7">
+        <div class="col-xs-3 col-sm-5 col-md-5 col-lg-6">
             <div class="col-sm-12"><?php echo $search; ?></div>
         </div>
-        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 login-register-links">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 login-register-links">
             <?php if($logged) { ?>
             <ul class="list-unstyled">
                 <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
@@ -79,7 +78,12 @@
             <?php echo $text_login_register; ?>
             <?php } ?>
         </div>
-        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1">
+        <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
+            <div class="change-language">
+                <?php echo $language; ?>
+            </div>
+        </div>
+        <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
         	<div class="search-cart">
         		<div class="cart">
                 	<a href="javascript:void(0)" class="toggleCart"><?php echo $cart_text; ?><span><?php echo $text_quantity_items; ?></span></a>
