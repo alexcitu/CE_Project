@@ -45,21 +45,21 @@
       </div>
       <div class="col-sm-6">
         <div class="footer_box social">
-          <h5>FOLLOW US</h5>
+          <h5><?php echo $follow_text ?></h5>
           <span class="social-icons"> <a target="_blank" href="http://www.facebook.com/">
-              <img src="catalog/view/theme/radiance/image/social_icons/facebook.jpg" alt=”facebook_icon”></a>
+              <img src="catalog/view/theme/radiance/image/social_icons/facebook.jpg" alt="Facebook"></a>
           </span>
           <span class="social-icons"> <a target="_blank" href="http://www.twitter.com/">
-              <img src="catalog/view/theme/radiance/image/social_icons/twitter.png" alt=”facebook_icon”></a>
+              <img src="catalog/view/theme/radiance/image/social_icons/twitter.png" alt="Twitter"></a>
           </span>
           <span class="social-icons"> <a target="_blank" href="http://www.instagram.com/">
-              <img src="catalog/view/theme/radiance/image/social_icons/instagram.png" alt=”facebook_icon”></a>
+              <img src="catalog/view/theme/radiance/image/social_icons/instagram.png" alt="Instagram"></a>
           </span>
           <span class="social-icons"> <a target="_blank" href="http://www.pinterest.com/">
-              <img src="catalog/view/theme/radiance/image/social_icons/pinterest.png" alt=”facebook_icon”></a>
+              <img src="catalog/view/theme/radiance/image/social_icons/pinterest.png" alt="Pinterest"></a>
           </span>
           <span class="social-icons"> <a target="_blank" href="https://plus.google.com/">
-              <img src="catalog/view/theme/radiance/image/social_icons/googleplus.png" alt=”facebook_icon”></a>
+              <img src="catalog/view/theme/radiance/image/social_icons/googleplus.png" alt="Google Plus"></a>
           </span>
         </div>
       </div>

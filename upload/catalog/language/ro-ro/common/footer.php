@@ -15,3 +15,4 @@ $_['text_order']        = 'Istoric comenzi';
 $_['text_wishlist']     = 'Listă de dorinţe';
 $_['text_newsletter']   = 'Newsletter';
 $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
+$_['follow_text']       = 'FOLLOW US';
