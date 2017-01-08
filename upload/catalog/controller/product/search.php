@@ -154,6 +154,8 @@ class ControllerProductSearch extends Controller {
 		$data['button_list'] = $this->language->get('button_list');
 		$data['button_grid'] = $this->language->get('button_grid');
 
+		$data['text_stock'] = $this->language->get('text_stock');
+
 		$data['compare'] = $this->url->link('product/compare');
 
 		$this->load->model('catalog/category');
@@ -244,6 +246,14 @@ class ControllerProductSearch extends Controller {
 					$rating = false;
 				}
 
+				if ($result['quantity'] <= 0) {
+					$stockStatus = $result['stock_status'];
+				} elseif ($this->config->get('config_stock_display')) {
+					$stockStatus = $result['quantity'];
+				} else {
+					$stockStatus = $this->language->get('text_instock');
+				}
+
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
@@ -254,7 +264,8 @@ class ControllerProductSearch extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
+					'stock'		  => $stockStatus
 				);
 			}
 
