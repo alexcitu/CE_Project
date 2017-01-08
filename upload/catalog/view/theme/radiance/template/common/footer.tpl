@@ -39,7 +39,31 @@
       </div>
     </div>
     <hr>
-    <p class="copyrights"><?php echo $powered; ?></p>
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="copyrights"><?php echo $powered; ?></p>
+      </div>
+      <div class="col-sm-6">
+        <div class="footer_box social">
+          <h5><?php echo $follow_text; ?></h5>
+          <span class="social-icons"> <a target="_blank" href="http://www.facebook.com/">
+              <img src="catalog/view/theme/radiance/image/social_icons/facebook.jpg" alt="Facebook"></a>
+          </span>
+          <span class="social-icons"> <a target="_blank" href="http://www.twitter.com/">
+              <img src="catalog/view/theme/radiance/image/social_icons/twitter.png" alt="Twitter"></a>
+          </span>
+          <span class="social-icons"> <a target="_blank" href="http://www.instagram.com/">
+              <img src="catalog/view/theme/radiance/image/social_icons/instagram.png" alt="Instagram"></a>
+          </span>
+          <span class="social-icons"> <a target="_blank" href="http://www.pinterest.com/">
+              <img src="catalog/view/theme/radiance/image/social_icons/pinterest.png" alt="Pinterest"></a>
+          </span>
+          <span class="social-icons"> <a target="_blank" href="https://plus.google.com/">
+              <img src="catalog/view/theme/radiance/image/social_icons/googleplus.png" alt="Google Plus"></a>
+          </span>
+        </div>
+      </div>
+    </div>
     <a href="http://radiance.demo.isenselabs.com/">Tema radiance. Toate drepturile sunt rezervate</a>
   </div>
 </footer>

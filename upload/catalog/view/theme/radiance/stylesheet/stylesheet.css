@@ -568,6 +568,11 @@ footer .copyrights {
 footer .copyrights a {
 	display: inline-block;
 }
+
+.social-icons
+{
+	display:inline-block;
+}
 /* alert */
 .alert {
 	padding: 8px 14px 8px 14px;
