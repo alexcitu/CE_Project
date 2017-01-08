@@ -15,6 +15,11 @@
           <?php } ?>
           <?php if ($product['tax']) { ?>
           <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+
+             <div class="col-md-8 col-md-offset-1">
+          <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block btn-cart"> Sunt hardocat! REPARA-MA</button>
+        </div>
+
           <?php } ?>
         </p>
         <?php } ?>
