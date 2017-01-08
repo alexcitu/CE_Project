@@ -14,3 +14,4 @@ $_['text_logout']        = 'Ieșire din cont';
 $_['text_checkout']      = 'Comandă';
 $_['text_search']        = 'Căutare';
 $_['text_all']           = 'Afișează tot';
+$_['text_login_register']= '<a href="index.php?route=account/login">Autentifică-te</a> | <a href="index.php?route=account/register">Înregistrează-te</a>';
