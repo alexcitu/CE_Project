@@ -45,7 +45,7 @@
       </div>
       <div class="col-sm-6">
         <div class="footer_box social">
-          <h5><?php echo $follow_text ?></h5>
+          <h5><?php echo $follow_text; ?></h5>
           <span class="social-icons"> <a target="_blank" href="http://www.facebook.com/">
               <img src="catalog/view/theme/radiance/image/social_icons/facebook.jpg" alt="Facebook"></a>
           </span>
