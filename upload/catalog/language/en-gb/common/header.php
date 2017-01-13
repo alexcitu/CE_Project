@@ -15,3 +15,4 @@ $_['text_checkout']      = 'Checkout';
 $_['text_search']        = 'Search';
 $_['text_all']           = 'Show All';
 $_['text_login_register']= '<a href="index.php?route=account/login">Login</a> | <a href="index.php?route=account/register">Register</a>';
+$_['text_educational']	 =	'This is a virtual shop and was created for educational purposes';

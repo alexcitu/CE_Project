@@ -190,6 +190,11 @@
       </div>
     </div>
   </div>
+
+    <div class="educationalmesage">
+        <?php echo $text_educational; ?>
+    </div>
+
   <nav id="menu-mobile">
 	<div class="container">
     	<div class="navbar-header"><span id="category"><?php echo $text_category_mobile; ?></span>
@@ -204,7 +209,6 @@
             <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
               <div class="dropdown-menu">
                 <div class="dropdown-inner">
-                  
                   <ul class="list-unstyled">
                   <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                     <?php foreach ($children as $child) { ?>
