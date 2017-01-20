@@ -16,6 +16,11 @@
       </ul>
       <h1><?php echo $heading_title; ?></h1>
       <?php echo $text_message; ?>
+      <?php if (isset($isLoggedCheckout) && !$isLoggedCheckout) { ?>
+        <div class="buttons">
+          <div class="pull-right button-spacing"><a href="<?php echo $create_account; ?>" class="btn btn-primary"><?php echo $button_create_account; ?></a></div>
+        </div>
+      <?php } ?>
       <div class="buttons">
         <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
       </div>

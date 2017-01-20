@@ -45,6 +45,8 @@ class ControllerCheckoutSuccess extends Controller {
 		}
 
 		$this->document->setTitle($this->language->get('heading_title'));
+		
+		$data['isLoggedCheckout'] = $this->customer->isLogged() ? true : false;
 
 		$data['breadcrumbs'] = array();
 
@@ -84,8 +86,10 @@ class ControllerCheckoutSuccess extends Controller {
 		}
 
 		$data['button_continue'] = $this->language->get('button_continue');
+		$data['button_create_account'] = $this->language->get('text_button_create_account');
 
 		$data['continue'] = $this->url->link('common/home');
+		$data['create_account'] = $this->url->link('account/register');
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
