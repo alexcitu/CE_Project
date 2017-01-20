@@ -152,6 +152,9 @@
           <?php } else { ?>
           <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
           <?php } ?>
+            <div class="educationalmesage col-xs-offset-0">
+                <?php echo $text_educational; ?>
+            </div>
         </div>
       </div>
       <div class="hidden-sm hidden-xs col-md-9 col-lg-9">
@@ -190,10 +193,6 @@
       </div>
     </div>
   </div>
-
-    <div class="educationalmesage">
-        <?php echo $text_educational; ?>
-    </div>
 
   <nav id="menu-mobile">
 	<div class="container">
