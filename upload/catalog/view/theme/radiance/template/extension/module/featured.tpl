@@ -16,7 +16,7 @@
           <?php if ($product['tax']) { ?>
           <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
           <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block btn-cart" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
         </div>
 
