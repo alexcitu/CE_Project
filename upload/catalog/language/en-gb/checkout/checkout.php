@@ -39,7 +39,7 @@ $_['text_week']                      = 'week';
 $_['text_semi_month']                = 'half-month';
 $_['text_month']                     = 'month';
 $_['text_year']                      = 'year';
-$_['text_contact_title']			 = 'Daca ai nelamuriri, ne poti contacta oricand:';
+$_['text_contact_title']			 = 'If you have any questions, feel free to contact us anytime:';
 
 // Column
 $_['column_name']                    = 'Product Name';
