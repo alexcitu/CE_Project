@@ -486,6 +486,8 @@ if (typeof Object.create !== "function") {
                     paginationButton.data("owl-roundPages", counter);
 
                     base.paginationWrapper.append(paginationButton);
+
+                    $('.owl-page span').html($('img.slideshow-elem-' + i).attr('alt'));
                 }
             }
             base.checkPagination();
