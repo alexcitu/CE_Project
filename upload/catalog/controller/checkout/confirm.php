@@ -1,5 +1,8 @@
 <?php
 class ControllerCheckoutConfirm extends Controller {
+	
+	var $data = [];
+	
 	public function index() {
 		$redirect = '';
 
@@ -327,18 +330,19 @@ class ControllerCheckoutConfirm extends Controller {
 
 			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
 
-			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
-			$data['text_payment_recurring'] = $this->language->get('text_payment_recurring');
+			$this->data['text_recurring_item'] = $this->language->get('text_recurring_item');
+			$this->data['text_payment_recurring'] = $this->language->get('text_payment_recurring');
+			$this->data['text_contact_title'] = $this->language->get('text_contact_title');
 
-			$data['column_name'] = $this->language->get('column_name');
-			$data['column_model'] = $this->language->get('column_model');
-			$data['column_quantity'] = $this->language->get('column_quantity');
-			$data['column_price'] = $this->language->get('column_price');
-			$data['column_total'] = $this->language->get('column_total');
+			$this->data['column_name'] = $this->language->get('column_name');
+			$this->data['column_model'] = $this->language->get('column_model');
+			$this->data['column_quantity'] = $this->language->get('column_quantity');
+			$this->data['column_price'] = $this->language->get('column_price');
+			$this->data['column_total'] = $this->language->get('column_total');
 
 			$this->load->model('tool/upload');
 
-			$data['products'] = array();
+			$this->data['products'] = array();
 
 			foreach ($this->cart->getProducts() as $product) {
 				$option_data = array();
@@ -384,7 +388,7 @@ class ControllerCheckoutConfirm extends Controller {
 					}
 				}
 
-				$data['products'][] = array(
+				$this->data['products'][] = array(
 					'cart_id'    => $product['cart_id'],
 					'product_id' => $product['product_id'],
 					'name'       => $product['name'],
@@ -400,31 +404,92 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 
 			// Gift Voucher
-			$data['vouchers'] = array();
+			$this->data['vouchers'] = array();
 
 			if (!empty($this->session->data['vouchers'])) {
 				foreach ($this->session->data['vouchers'] as $voucher) {
-					$data['vouchers'][] = array(
+					$this->data['vouchers'][] = array(
 						'description' => $voucher['description'],
 						'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency'])
 					);
 				}
 			}
 
-			$data['totals'] = array();
+			$this->data['totals'] = array();
 
 			foreach ($order_data['totals'] as $total) {
-				$data['totals'][] = array(
+				$this->data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
 			}
 
-			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
+			$this->data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
 		} else {
-			$data['redirect'] = $redirect;
+			$this->data['redirect'] = $redirect;
 		}
 
-		$this->response->setOutput($this->load->view('checkout/confirm', $data));
+		$this->displayContactInfo();
+
+		$this->response->setOutput($this->load->view('checkout/confirm', $this->data));
+	}
+
+	private function displayContactInfo()
+	{
+		$this->load->language('information/contact');
+
+		$this->data['text_location'] = $this->language->get('text_location');
+		$this->data['text_store'] = $this->language->get('text_store');
+		$this->data['text_contact'] = $this->language->get('text_contact');
+		$this->data['text_address'] = $this->language->get('text_address');
+		$this->data['text_telephone'] = $this->language->get('text_telephone');
+		$this->data['text_fax'] = $this->language->get('text_fax');
+		$this->data['text_open'] = $this->language->get('text_open');
+		$this->data['text_comment'] = $this->language->get('text_comment');
+
+		$this->load->model('tool/image');
+
+		if ($this->config->get('config_image')) {
+			$this->data['image'] = $this->model_tool_image->resize($this->config->get('config_image'), $this->config->get($this->config->get('config_theme') . '_image_location_width'), $this->config->get($this->config->get('config_theme') . '_image_location_height'));
+		} else {
+			$this->data['image'] = false;
+		}
+
+		$this->data['store'] = $this->config->get('config_name');
+		$this->data['address'] = nl2br($this->config->get('config_address'));
+		$this->data['geocode'] = $this->config->get('config_geocode');
+		$this->data['geocode_hl'] = $this->config->get('config_language');
+		$this->data['telephone'] = $this->config->get('config_telephone');
+		$this->data['fax'] = $this->config->get('config_fax');
+		$this->data['open'] = nl2br($this->config->get('config_open'));
+		$this->data['comment'] = $this->config->get('config_comment');
+
+		$this->data['locations'] = array();
+
+		$this->load->model('localisation/location');
+
+		foreach((array)$this->config->get('config_location') as $location_id) {
+			$location_info = $this->model_localisation_location->getLocation($location_id);
+
+			if ($location_info) {
+				if ($location_info['image']) {
+					$image = $this->model_tool_image->resize($location_info['image'], $this->config->get($this->config->get('config_theme') . '_image_location_width'), $this->config->get($this->config->get('config_theme') . '_image_location_height'));
+				} else {
+					$image = false;
+				}
+
+				$this->data['locations'][] = array(
+					'location_id' => $location_info['location_id'],
+					'name'        => $location_info['name'],
+					'address'     => nl2br($location_info['address']),
+					'geocode'     => $location_info['geocode'],
+					'telephone'   => $location_info['telephone'],
+					'fax'         => $location_info['fax'],
+					'image'       => $image,
+					'open'        => nl2br($location_info['open']),
+					'comment'     => $location_info['comment']
+				);
+			}
+		}
 	}
 }
