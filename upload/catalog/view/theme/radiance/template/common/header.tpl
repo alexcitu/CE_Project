@@ -152,7 +152,7 @@
           <?php } else { ?>
           <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
           <?php } ?>
-            <div class="educationalmesage col-xs-offset-0">
+            <div class="educationalmesage col-xs-offset-3 col-sm-offset-4 col-md-offset-0">
                 <?php echo $text_educational; ?>
             </div>
         </div>
