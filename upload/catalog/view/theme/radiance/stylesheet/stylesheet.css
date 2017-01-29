@@ -1491,12 +1491,15 @@ hr.category-page {
 #column-left .owl-controls .owl-page span,
 #column-right .owl-controls .owl-page span {
 	display: block;
-	width: 14px;
-	height: 14px;
+	width: 150px;
+	height: 30px;
 	background: #FAFAFA ;
-	border-radius: 20px;
+	border-radius: 3px;
 	border: 2px solid #FFF;
 	box-shadow: none;
+	margin : 0 -6px;
+	padding-top: 5px;
+	padding-bottom: 10px;
 }
 
 #content .owl-controls .owl-page.active span,

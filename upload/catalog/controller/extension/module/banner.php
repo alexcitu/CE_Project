@@ -8,7 +8,7 @@ class ControllerExtensionModuleBanner extends Controller {
 
 		$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
 		$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
-		$this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+		$this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.js');
 
 		$data['banners'] = array();
 

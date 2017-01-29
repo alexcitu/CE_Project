@@ -476,7 +476,7 @@ if (typeof Object.create !== "function") {
                     paginationButton = $("<div/>", {
                         "class" : "owl-page"
                     });
-                    paginationButtonInner = $("<span></span>", {
+                    paginationButtonInner = $("<span class='owl-span-" + i + "'></span>", {
                         "text": base.options.paginationNumbers === true ? counter : "",
                         "class": base.options.paginationNumbers === true ? "owl-numbers" : ""
                     });
@@ -486,6 +486,8 @@ if (typeof Object.create !== "function") {
                     paginationButton.data("owl-roundPages", counter);
 
                     base.paginationWrapper.append(paginationButton);
+
+                    $('.owl-page span.owl-span-' + i).html($('img.slideshow-elem-' + i).attr('alt'));
                 }
             }
             base.checkPagination();
