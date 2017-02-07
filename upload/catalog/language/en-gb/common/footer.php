@@ -16,3 +16,4 @@ $_['text_wishlist']     = 'Wish List';
 $_['text_newsletter']   = 'Newsletter';
 $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
 $_['follow_text']       = 'FOLLOW US';
+$_['cookie_message']    = 'By using this website you allow us to place cookies on your computer. They are harmless and never personally identify you.';

@@ -16,3 +16,4 @@ $_['text_wishlist']     = 'Listă de dorinţe';
 $_['text_newsletter']   = 'Newsletter';
 $_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
 $_['follow_text']       = 'URMARESTE-NE PE';
+$_['cookie_message']    = 'Prin utilizarea acestui site sunteti de acord cu stocarea cookie-urilor in calculatorul dumneavoastra. Ele sunt inofensive si nu vor fi folosite pentru a va identifica.';
