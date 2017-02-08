@@ -5,7 +5,7 @@ $_['heading_title']     = 'Oferte speciale';
 // Text
 $_['text_empty']        = 'Momentan nu avem oferte speciale.';
 $_['text_quantity']     = 'Cantitate:';
-$_['text_manufacturer'] = 'Producător:';
+$_['text_manufacturer'] = 'Furnizor:';
 $_['text_model']        = 'Cod Produs:';
 $_['text_points']       = 'Puncte de recompensă:';
 $_['text_price']        = 'Preţ:';

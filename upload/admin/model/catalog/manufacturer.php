@@ -31,6 +31,16 @@ class ModelCatalogManufacturer extends Model {
 			$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET image = '" . $this->db->escape($data['image']) . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
 		}
 
+		$query = "UPDATE " . DB_PREFIX . "manufacturer " .
+			"SET website = '" . (isset($data['website']) ? $this->db->escape($data['website']) : '') . "', " .
+			"telephone = '" . (isset($data['telephone']) ? $this->db->escape($data['telephone']) : '') . "', " .
+			"email = '" . (isset($data['email']) ? $this->db->escape($data['email']) : '') . "' " .
+			"WHERE manufacturer_id = '" . (int)$manufacturer_id . "'";
+
+		if (isset($data['website']) || isset($data['telephone']) || isset($data['email'])) {
+			$this->db->query($query);
+		}
+
 		$this->db->query("DELETE FROM " . DB_PREFIX . "manufacturer_to_store WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
 
 		if (isset($data['manufacturer_store'])) {
