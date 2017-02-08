@@ -1,10 +1,46 @@
 <?php
 class ControllerCheckoutSuccess extends Controller {
+	const VOUCHER_THEME_ID = 8;
+	const VOUCHER_STATUS_ENABLED = 1;
+	const VOUCHER_CODE_CHARS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
 	public function index() {
 		$this->load->language('checkout/success');
 
 		if (isset($this->session->data['order_id'])) {
 			$this->cart->clear();
+
+			if ($this->customer->isLogged())
+			{
+				$this->load->model('sale/voucher');
+
+				do
+				{
+					$voucherCode = '';
+
+					for ($i = 0; $i < 8; $i++)
+					{
+						$voucherCode .= self::VOUCHER_CODE_CHARS[mt_rand(0, 61)];
+					}
+
+					$voucherCodeExists = $this->model_sale_voucher->getVoucherByCode($voucherCode);
+				} while (!empty($voucherCodeExists));
+
+				$voucher_data = array(
+					'code'             => $voucherCode,
+					'from_name'        => $this->config->get('config_name'),
+					'from_email'       => $this->config->get('config_email'),
+					'to_name'          => $this->customer->getFirstName() . ' ' . $this->customer->getLastName(),
+					'to_email'         => $this->customer->getEmail(),
+					'voucher_theme_id' => self::VOUCHER_THEME_ID,
+					'message'          => $this->language->get('text_voucher_message'),
+					'amount'           => rand(15, 35),
+					'status'           => self::VOUCHER_STATUS_ENABLED
+				);
+
+				$voucher_id = $this->model_sale_voucher->addVoucher($voucher_data);
+				$this->model_sale_voucher->sendVoucher($voucher_id);
+			}
 
 			// Add to activity log
 			if ($this->config->get('config_customer_activity')) {

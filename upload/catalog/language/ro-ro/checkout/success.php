@@ -10,3 +10,4 @@ $_['text_customer']        = '<p>Your order <a href="%s">%s</a> has been success
 $_['text_guest']           = '<p>Your order has been successfully processed!</p><p>Please direct any questions you have to the <a href="%s">store owner</a>.</p><p>Thanks for shopping with us online!</p>';
 $_['text_order']		   = '(#%s)';
 $_['text_button_create_account'] = 'Creare cont';
+$_['text_voucher_message'] = 'Iti multumim pentru ca ai cumparat de la noi ! Bucura-te de acest voucher de discount pentru viitoarele tale achizitii de la noi.';
