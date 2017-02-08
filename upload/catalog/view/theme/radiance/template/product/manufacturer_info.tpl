@@ -44,18 +44,26 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="row">
-              <div class="col-sm-3"><strong><?php echo $supplier_text['website_title']; ?></strong><br>
-                <a href="http://<?php echo $supplier['website']; ?>"><?php echo $supplier['website']; ?></a><br />
-                <br />
-              </div>
-              <div class="col-sm-3"><strong><?php echo $supplier_text['telephone_title']; ?></strong><br>
-                <?php echo $supplier['telephone']; ?><br />
-                <br />
-              </div>
-              <div class="col-sm-3"><strong><?php echo $supplier_text['email_title']; ?></strong><br>
-                <a href="mailto:<?php echo $supplier['email']; ?>"><?php echo $supplier['email']; ?></a><br />
-                <br />
-              </div>
+              <?php if (!empty($supplier['website'])) { ?>
+                <div class="col-sm-3"><strong><?php echo $supplier_text['website_title']; ?></strong><br>
+                  <a href="http://<?php echo $supplier['website']; ?>"><?php echo $supplier['website']; ?></a><br />
+                  <br />
+                </div>
+              <?php } ?>
+
+              <?php if (!empty($supplier['telephone'])) { ?>
+                <div class="col-sm-3"><strong><?php echo $supplier_text['telephone_title']; ?></strong><br>
+                  <?php echo $supplier['telephone']; ?><br />
+                  <br />
+                </div>
+              <?php } ?>
+
+              <?php if (!empty($supplier['email'])) { ?>
+                <div class="col-sm-3"><strong><?php echo $supplier_text['email_title']; ?></strong><br>
+                  <a href="mailto:<?php echo $supplier['email']; ?>"><?php echo $supplier['email']; ?></a><br />
+                  <br />
+                </div>
+              <?php } ?>
             </div>
           </div>
         </div>
