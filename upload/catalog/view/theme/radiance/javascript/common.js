@@ -137,17 +137,17 @@ $(document).ready(function() {
 
 // Cart add remove functions
 var cart = {
-	'add': function(product_id, quantity) {
+	'add': function(buttonElem, product_id, quantity) {
 		$.ajax({
 			url: 'index.php?route=checkout/cart/add',
 			type: 'post',
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				$(buttonElem).button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				$(buttonElem).button('reset');
 			},
 			success: function(json) {
 				$('.alert, .text-danger').remove();
@@ -166,7 +166,7 @@ var cart = {
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('#cartBox #cart').load('index.php?route=common/cart/info');
 				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
