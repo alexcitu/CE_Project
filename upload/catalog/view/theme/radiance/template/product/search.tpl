@@ -115,7 +115,22 @@
               <?php } ?>
               <?php if ($product['tax']) { ?>
               <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-              <span class="price-tax"><?php echo $text_stock; ?> <?php echo $product['stock']; ?></span>
+              <span class="price-tax"><?php echo $text_stock; ?>
+                <?php
+                if ($product['stock'] == "În Stoc") {
+                echo '<span style="color:green; font-weight: bold;">Disponibil in stoc</span>';
+                }
+                if ($product['stock'] == "Stoc epuizat") {
+                echo '<span style="color:red; font-weight: bold;">Stoc epuizat</span>';
+                }
+                if ($product['stock'] == "In Stock") {
+                echo '<span style="color:green; font-weight: bold;">Available in stock</span>';
+                }
+                if ($product['stock'] == "Out Of Stock") {
+                echo '<span style="color:red; font-weight: bold;">Out Of Stock</span>';
+                }
+                ?>
+              </span>
               <?php } ?>
             </p>
             <?php } ?>
