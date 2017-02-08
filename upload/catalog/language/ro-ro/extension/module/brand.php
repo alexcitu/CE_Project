@@ -1,2 +1,2 @@
 <?php
-$_['heading_title']    = 'Producător';
+$_['heading_title']    = 'Furnizor';

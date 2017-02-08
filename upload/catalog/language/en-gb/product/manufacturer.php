@@ -1,14 +1,14 @@
 <?php
 // Heading
-$_['heading_title']     = 'Find Your Favorite Brand';
+$_['heading_title']     = 'Find Your Favorite Supplier';
 
 // Text
-$_['text_brand']        = 'Brand';
-$_['text_index']        = 'Brand Index:';
-$_['text_error']        = 'Brand not found!';
+$_['text_brand']        = 'Supplier';
+$_['text_index']        = 'Supplier Index:';
+$_['text_error']        = 'Supplier not found!';
 $_['text_empty']        = 'There are no products to list.';
 $_['text_quantity']     = 'Qty:';
-$_['text_manufacturer'] = 'Brand:';
+$_['text_manufacturer'] = 'Supplier:';
 $_['text_model']        = 'Product Code:';
 $_['text_points']       = 'Reward Points:';
 $_['text_price']        = 'Price:';
@@ -25,3 +25,7 @@ $_['text_rating_desc']  = 'Rating (Highest)';
 $_['text_model_asc']    = 'Model (A - Z)';
 $_['text_model_desc']   = 'Model (Z - A)';
 $_['text_limit']        = 'Show:';
+$_['info_title']		= 'Supplier contact information';
+$_['website_title']		= 'Website address';
+$_['telephone_title']	= 'Telephone number';
+$_['email_title']		= 'Email address';
