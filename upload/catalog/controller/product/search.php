@@ -247,7 +247,7 @@ class ControllerProductSearch extends Controller {
 				}
 
 				if ($result['quantity'] <= 0) {
-					$stockStatus = $result['stock_status'];
+					$stockStatus = $this->language->get('text_outofstock');
 				} elseif ($this->config->get('config_stock_display')) {
 					$stockStatus = $result['quantity'];
 				} else {
