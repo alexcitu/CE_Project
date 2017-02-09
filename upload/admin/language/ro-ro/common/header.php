@@ -10,7 +10,7 @@ $_['text_customer']          = 'Customers';
 $_['text_online']            = 'Customers Online';
 $_['text_approval']          = 'Pending approval';
 $_['text_product']           = 'Products';
-$_['text_stock']             = 'Out of stock';
+$_['text_stock']             = '<span style="color:red; font-weight: bold;">Stoc epuizat</span>';
 $_['text_review']            = 'Reviews';
 $_['text_return']            = 'Returns';
 $_['text_affiliate']         = 'Affiliates';
