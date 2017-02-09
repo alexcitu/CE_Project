@@ -30,6 +30,7 @@ $_['text_model_desc']   = 'Model (Z - A)';
 $_['text_limit']        = 'Produse pe pag:';
 $_['text_stock']        = 'Disponibilitate:';
 $_['text_instock']      = '<span style="color:green; font-weight: bold;">În Stoc</span>';
+$_['text_outofstock']	= '<span style="color:red; font-weight: bold;">Stoc epuizat</span>';
 
 // Intrări
 $_['entry_search']      = 'Căutare dupa urmatoarele criterii:';
