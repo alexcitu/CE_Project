@@ -65,6 +65,11 @@
       </div>
     </div>
     <a href="http://radiance.demo.isenselabs.com/">Tema radiance. Toate drepturile sunt rezervate</a>
+    <div class="ui-widget">
+      <div class="cookie-message ui-widget-header blue">
+        <p> <?php echo $cookie_message; ?></p>
+      </div>
+    </div>
   </div>
 </footer>
 <script type="text/javascript">

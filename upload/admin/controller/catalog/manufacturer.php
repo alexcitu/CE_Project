@@ -270,6 +270,9 @@ class ControllerCatalogManufacturer extends Controller {
 		$data['text_amount'] = $this->language->get('text_amount');
 
 		$data['entry_name'] = $this->language->get('entry_name');
+		$data['entry_website'] = $this->language->get('entry_website');
+		$data['entry_telephone'] = $this->language->get('entry_telephone');
+		$data['entry_email'] = $this->language->get('entry_email');
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
 		$data['entry_image'] = $this->language->get('entry_image');
@@ -341,10 +344,19 @@ class ControllerCatalogManufacturer extends Controller {
 
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];
+			$data['website'] = $this->request->post['website'];
+			$data['telephone'] = $this->request->post['telephone'];
+			$data['email'] = $this->request->post['email'];
 		} elseif (!empty($manufacturer_info)) {
 			$data['name'] = $manufacturer_info['name'];
+			$data['website'] = $manufacturer_info['website'];
+			$data['telephone'] = $manufacturer_info['telephone'];
+			$data['email'] = $manufacturer_info['email'];
 		} else {
 			$data['name'] = '';
+			$data['website'] = '';
+			$data['telephone'] = '';
+			$data['email'] = '';
 		}
 
 		$this->load->model('setting/store');

@@ -359,6 +359,19 @@ class ControllerProductManufacturer extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+			$data['supplier_text'] = [
+				'info_title' => $this->language->get('info_title'),
+				'website_title' => $this->language->get('website_title'),
+				'telephone_title' => $this->language->get('telephone_title'),
+				'email_title' => $this->language->get('email_title'),
+			];
+
+			$data['supplier'] = array_filter([
+				'website' => $manufacturer_info['website'],
+				'telephone' => $manufacturer_info['telephone'],
+				'email' => $manufacturer_info['email']
+			]);
+
 			$this->response->setOutput($this->load->view('product/manufacturer_info', $data));
 		} else {
 			$url = '';

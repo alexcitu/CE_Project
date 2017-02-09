@@ -1,11 +1,16 @@
 <div id="slideshow<?php echo $module; ?>" class="owl-carousel" style="opacity: 1;">
+    <?php $count = 0; ?>
   <?php foreach ($banners as $banner) { ?>
   <div class="item">
     <?php if ($banner['link']) { ?>
-    <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a>
+    <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive slideshow-elem-<?php echo $count; ?>" /></a>
     <?php } else { ?>
-    <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
+    <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive slideshow-elem-<?php echo $count; ?>" />
     <?php } ?>
+    <?php
+        $productTitles[] = $banner['title'];
+        $count++;
+     ?>
   </div>
   <?php } ?>
 </div>
@@ -15,7 +20,7 @@ $('#slideshow<?php echo $module; ?>').owlCarousel({
 	autoPlay: 3000,
 	singleItem: true,
 	navigation: true,
-	navigationText: ['<i class="fa fa-angle-left fa-5x"></i>', '<i class="fa fa-angle-right fa-5x"></i>'],
+	navigationText: ['', ''],
 	pagination: true
 });
 --></script>

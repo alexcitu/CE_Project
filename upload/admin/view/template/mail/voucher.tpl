@@ -34,7 +34,7 @@ a img {
 <body>
 <div id="container">
   <?php if ($image) { ?>
-  <div style="float: right; margin-left: 20px;"><a href="<?php echo $store_url; ?>" title="<?php echo $store_name; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $store_name; ?>" /></a></div>
+  <div style="margin-left: 20px; margin-bottom: 20px; max-width: 50%"><a href="<?php echo $store_url; ?>" title="<?php echo $store_name; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $store_name; ?>" /></a></div>
   <?php } ?>
   <div>
     <p><?php echo $text_greeting; ?></p>

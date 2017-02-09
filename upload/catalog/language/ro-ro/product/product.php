@@ -1,8 +1,8 @@
 <?php
 // Text
 $_['text_search']       = 'Căutare';
-$_['text_brand']        = 'Producător';
-$_['text_manufacturer'] = 'Producător:';
+$_['text_brand']        = 'Furnizor';
+$_['text_manufacturer'] = 'Furnizor:';
 $_['text_model']        = 'Cod produs:';
 $_['text_reward']       = 'Puncte de recompensă:'; 
 $_['text_points']       = 'Preţul în puncte de recompensă:';
