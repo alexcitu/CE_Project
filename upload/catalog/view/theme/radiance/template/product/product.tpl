@@ -49,22 +49,7 @@
             <?php if ($reward) { ?>
             <li><?php echo $text_reward; ?> <?php echo $reward; ?></li>
             <?php } ?>
-            <li><?php echo $text_stock; ?>
-              <?php
-                if ($stock == "În Stoc") {
-                echo '<span style="color:green; font-weight: bold;">Disponibil in stoc</span>';
-                }
-                if ($stock == "Stoc epuizat") {
-                echo '<span style="color:red; font-weight: bold;">Stoc epuizat</span>';
-                }
-                if ($stock == "In Stock") {
-                echo '<span style="color:green; font-weight: bold;">Available in stock</span>';
-                }
-                if ($stock == "Out Of Stock") {
-                echo '<span style="color:red; font-weight: bold;">Out Of Stock</span>';
-                }
-                ?>
-            </li>
+            <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
           </ul>
           <?php if ($price) { ?>
           <ul class="list-unstyled price-table">

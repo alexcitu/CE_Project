@@ -7,7 +7,7 @@ $_['text_model']        = 'Cod produs:';
 $_['text_reward']       = 'Puncte de recompensă:'; 
 $_['text_points']       = 'Preţul în puncte de recompensă:';
 $_['text_stock']        = 'Disponibilitate:';
-$_['text_instock']      = 'În Stoc';
+$_['text_instock']      = '<span style="color:green; font-weight: bold;">În Stoc</span>';
 $_['text_tax']          = 'Fără TVA:'; 
 $_['text_discount']     = ' sau mai multe ';
 $_['text_option']       = 'Opţiuni disponibile';

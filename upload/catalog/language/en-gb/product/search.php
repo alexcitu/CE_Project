@@ -29,7 +29,7 @@ $_['text_model_asc']    = 'Model (A - Z)';
 $_['text_model_desc']   = 'Model (Z - A)';
 $_['text_limit']        = 'Show:';
 $_['text_stock']        = 'Availability:';
-$_['text_instock']      = 'In Stock';
+$_['text_instock']      = '<span style="color:green; font-weight: bold;">In Stock</span>';
 
 // Entry
 $_['entry_search']      = 'Search Criteria';

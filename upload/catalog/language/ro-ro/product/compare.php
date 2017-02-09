@@ -10,7 +10,7 @@ $_['text_price']        = 'Preţ';
 $_['text_model']        = 'Model';
 $_['text_manufacturer'] = 'Furnizor';
 $_['text_availability'] = 'Disponibilitate';
-$_['text_instock']      = 'În Stoc';
+$_['text_instock']      = '<span style="color:green; font-weight: bold;">În Stoc</span>';
 $_['text_rating']       = 'Notă';
 $_['text_reviews']      = 'Bazată pe %s note.';
 $_['text_summary']      = 'Sumar';
