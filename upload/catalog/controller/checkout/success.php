@@ -124,6 +124,8 @@ class ControllerCheckoutSuccess extends Controller {
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_create_account'] = $this->language->get('text_button_create_account');
 
+		$data['text_encouragement'] = $this->language->get('text_create_account_encouragement');
+
 		$data['continue'] = $this->url->link('common/home');
 		$data['create_account'] = $this->url->link('account/register');
 
