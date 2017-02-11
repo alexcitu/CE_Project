@@ -46,7 +46,7 @@
             <div class="row">
               <?php if (!empty($supplier['website'])) { ?>
                 <div class="col-sm-3"><strong><?php echo $supplier_text['website_title']; ?></strong><br>
-                  <a href="http://<?php echo $supplier['website']; ?>"><?php echo $supplier['website']; ?></a><br />
+                  <a href="http://<?php echo $supplier['website']; ?>" target="_blank"><?php echo $supplier['website']; ?></a><br />
                   <br />
                 </div>
               <?php } ?>
