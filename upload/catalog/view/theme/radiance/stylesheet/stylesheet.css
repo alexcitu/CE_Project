@@ -1510,6 +1510,18 @@ hr.category-page {
 	box-shadow: none;
 }
 
+@media only screen and (max-width : 991px){
+	#content .owl-controls .owl-page span,
+	#column-left .owl-controls .owl-page span,
+	#column-right .owl-controls .owl-page span {
+		width: 14px;
+		height: 5px;
+		border-radius: 20px;
+		padding-top: 0px;
+		margin: 0;
+	}
+}
+
 .cookie-message {
 	position:fixed;
 	bottom:0;left:0;right:0;

@@ -487,7 +487,10 @@ if (typeof Object.create !== "function") {
 
                     base.paginationWrapper.append(paginationButton);
 
-                    $('.owl-page span.owl-span-' + i).html($('img.slideshow-elem-' + i).attr('alt'));
+                    if($(window).width() > 991)
+                    {
+                        $('.owl-page span.owl-span-' + i).html($('img.slideshow-elem-' + i).attr('alt'));
+                    }
                 }
             }
             base.checkPagination();
