@@ -8,7 +8,6 @@
     <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive slideshow-elem-<?php echo $count; ?>" />
     <?php } ?>
     <?php
-        $productTitles[] = $banner['title'];
         $count++;
      ?>
   </div>
