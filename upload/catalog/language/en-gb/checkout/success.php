@@ -11,3 +11,9 @@ $_['text_guest']           = '<p>Your order has been successfully processed!</p>
 $_['text_order']		   = '(#%s)';
 $_['text_button_create_account'] = 'Create account';
 $_['text_voucher_message'] = 'Thank you for buying from us ! We hope you enjoy this voucher code for your future purchases.';
+$_['text_create_account_encouragement'] = '<strong>Here are a few advantages for a user:</strong><br>' .
+	'- Private wishlist with favorite products<br>' .
+	'- Newsletter subscription, in order to be up to date with all discounts and news<br>' .
+	'- Gift vouchers for every new order<br>' .
+	'- Guarantee and returns process are more accesible<br>' .
+	'Plus much more !';
