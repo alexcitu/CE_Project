@@ -216,6 +216,9 @@ class ControllerProductSearch extends Controller {
 			$results = $this->model_catalog_product->getProducts($filter_data);
 
 			foreach ($results as $result) {
+
+                $productCategory = $this->model_catalog_product->getProductCategory($result['product_id']);
+
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
 				} else {
@@ -264,7 +267,11 @@ class ControllerProductSearch extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
+					'href'        => $this->url->link('product/product',
+                        'product_id='
+                        . $result['product_id']
+                        . '&path='
+                        . (!empty($productCategory['category_id']) ? $productCategory['category_id'] : '')),
 					'stock'		  => $stockStatus
 				);
 			}
