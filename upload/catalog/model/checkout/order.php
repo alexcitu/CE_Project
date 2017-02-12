@@ -759,6 +759,13 @@ class ModelCheckoutOrder extends Model {
 	
 			// If order status is not 0 then send update text email
 			if ($order_info['order_status_id'] && $order_status_id && $notify) {
+				$this->load->model('account/order');
+
+				$orderProducts = $this->model_account_order->getOrderProducts($order_id);
+
+//				var_dump($orderProducts);
+//				die();
+
 				$language = new Language($order_info['language_code']);
 				$language->load($order_info['language_code']);
 				$language->load('mail/order');
@@ -790,11 +797,12 @@ class ModelCheckoutOrder extends Model {
 
 				if ($order_status_query->row['name'] == 'Complete' || $order_status_query->row['name'] == 'Shipped')
 				{
-					$message .= '<b><a href="http://google.ro"><img src='. $order_info['store_url'] . 'image/rate.png></a></b>';
+					foreach($orderProducts as $orderProduct)
+					{
+						$message .= '<strong>' . $orderProduct['name'] . '</strong><br>';
+						$message .= '<b><a href="'. $order_info['store_url'] .'index.php?route=product/product&product_id=' . $orderProduct['product_id'] . '"><img src=' . $order_info['store_url'] . 'image/rate.png></a></b><br><br>';
+					}
 				}
-
-//				var_dump($message);
-//				die();
 
 				$mail = new Mail();
 				$mail->protocol = $this->config->get('config_mail_protocol');
