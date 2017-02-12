@@ -14,5 +14,5 @@ $_['text_logout']        = 'Logout';
 $_['text_checkout']      = 'Checkout';
 $_['text_search']        = 'Search';
 $_['text_all']           = 'Show All';
-$_['text_login_register']= '<a href="index.php?route=account/login">Login</a> | <a href="index.php?route=account/register">Register</a>';
+$_['text_login_register']= '<a href="index.php?route=account/login">Login</a> | <a href="index.php?route=account/register">Register</a> | <a href="index.php?route=information/contact">Contact</a>';
 $_['text_educational']	 =	' * Project created for educational purposes';

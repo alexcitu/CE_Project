@@ -71,10 +71,10 @@
         	<li style="float: left;"><?php echo $currency; ?></li>
             </ul>
         </div>
-        <div class="col-xs-3 col-sm-5 col-md-5 col-lg-6">
+        <div class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             <div class="col-sm-12"><?php echo $search; ?></div>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 login-register-links">
+        <div class="col-xs-4 col-sm-5 col-md-4 col-lg-3 login-register-links">
             <?php if($logged) { ?>
             <ul class="list-unstyled">
                 <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
