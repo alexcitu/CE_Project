@@ -81,7 +81,16 @@
               <?php } ?>
               <?php } ?>
             </div>
+            <?php } else { ?>
+              <div class="rating">
+                <?php for ($i = 1; $i <= 5; $i++) { ?>
+                  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                <?php } ?>
+              </div>
             <?php } ?>
+            <div class="col-md-12 col-md-offset-0">
+              <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block btn-cart" onclick="cart.add(this,'<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
+            </div>
           </div>
         </div>
         </div>
