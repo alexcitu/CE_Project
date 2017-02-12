@@ -28,6 +28,12 @@
               <?php } ?>
               <?php } ?>
             </div>
+          <?php } else { ?>
+          <div class="rating">
+            <?php for ($i = 1; $i <= 5; $i++) { ?>
+            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+            <?php } ?>
+          </div>
           <?php } ?>
 
         <div class="col-md-10 col-md-offset-1">
