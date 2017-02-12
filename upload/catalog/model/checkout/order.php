@@ -763,9 +763,6 @@ class ModelCheckoutOrder extends Model {
 
 				$orderProducts = $this->model_account_order->getOrderProducts($order_id);
 
-//				var_dump($orderProducts);
-//				die();
-
 				$language = new Language($order_info['language_code']);
 				$language->load($order_info['language_code']);
 				$language->load('mail/order');
